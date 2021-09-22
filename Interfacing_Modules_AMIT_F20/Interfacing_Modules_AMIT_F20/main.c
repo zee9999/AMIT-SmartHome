@@ -31,7 +31,25 @@ int main(void)
 			LCD_CLEAR();
 			LCD_WRITE_STR("DATA TRANSMITTED");
 		}
-		if (data == '0')
+		else if (data == '2')
+		{
+			Master_Trans(2);
+			LCD_CLEAR();
+			LCD_WRITE_STR("DATA TRANSMITTED");
+		}
+		else if (data == '3')
+		{
+			Master_Trans(3);
+			LCD_CLEAR();
+			LCD_WRITE_STR("DATA TRANSMITTED");
+		}
+		else if (data == '4')
+		{
+			Master_Trans(4);
+			LCD_CLEAR();
+			LCD_WRITE_STR("DATA TRANSMITTED");
+		}
+		else if (data == '0')
 		{
 			Master_Trans(0);
 			LCD_CLEAR();
