@@ -644,11 +644,6 @@ int main(void)
  434:	c8 2f       	mov	r28, r24
 		LCD_CLEAR();
  436:	0e 94 26 01 	call	0x24c	; 0x24c <LCD_CLEAR>
-			LED1_OFF();
-			LED2_OFF();
-			LCD_CLEAR();
-			LCD_WRITE_STR("ALL LEDs: OFF");
-		}*/
 		switch (data)
  43a:	c2 30       	cpi	r28, 0x02	; 2
  43c:	c1 f0       	breq	.+48     	; 0x46e <main+0x56>

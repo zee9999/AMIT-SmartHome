@@ -23,40 +23,6 @@ int main(void)
 	{
 		data = Slave_Recv();
 		LCD_CLEAR();
-		/*if (data == 1)
-		{
-			LED0_ON();
-			LCD_CLEAR();
-			LCD_WRITE_STR("LED0: ON");
-		}
-		 if (data == 2)
-		{
-			LED1_ON();
-			LCD_CLEAR();
-			LCD_WRITE_STR("LED1: ON");
-		}
-		 if (data == 3)
-		{
-			LED2_ON();
-			LCD_CLEAR();
-			LCD_WRITE_STR("LED2: ON");
-		}
-		 if (data == 4)
-		{
-			LED0_Toggle();
-			//LED1_Toggle();
-			//LED2_Toggle();
-			LCD_CLEAR();
-			LCD_WRITE_STR("ALL LEDs: ON");
-		}
-		 if (data == 0)
-		{
-			LED0_OFF();
-			LED1_OFF();
-			LED2_OFF();
-			LCD_CLEAR();
-			LCD_WRITE_STR("ALL LEDs: OFF");
-		}*/
 		switch (data)
 		{
 		case 1:

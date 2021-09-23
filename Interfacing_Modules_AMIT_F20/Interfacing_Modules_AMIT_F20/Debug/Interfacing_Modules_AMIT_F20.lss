@@ -787,11 +787,6 @@ int main(void)
 	{
 		data = HC_05_Recieve();
  4d8:	0e 94 33 01 	call	0x266	; 0x266 <HC_05_Recieve>
-		{
-			Master_Trans(0);
-			LCD_CLEAR();
-			LCD_WRITE_STR("DATA TRANSMITTED");
-		}*/
 		switch ((uint8_t) data)
  4dc:	82 33       	cpi	r24, 0x32	; 50
  4de:	a9 f0       	breq	.+42     	; 0x50a <main+0x42>
