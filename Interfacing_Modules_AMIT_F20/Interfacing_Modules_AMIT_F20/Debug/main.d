@@ -1,4 +1,4 @@
-main.d main.o: .././main.c .././UART.h .././UART_CONFIG.h \
+main.d main.o: .././main.c .././HC_05.h .././HC_05_Configuration.h \
  .././CPU_Configurations.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
@@ -18,9 +18,9 @@ main.d main.o: .././main.c .././UART.h .././UART_CONFIG.h \
  .././BIT_MATH.h .././DIO.h .././DIO_Configuration.h .././SPI.h \
  .././SPI_Config.h .././SPI_Address.h .././LCD.h .././LCD_CONFIG.h
 
-.././UART.h:
+.././HC_05.h:
 
-.././UART_CONFIG.h:
+.././HC_05_Configuration.h:
 
 .././CPU_Configurations.h:
 

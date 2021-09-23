@@ -10,9 +10,13 @@
 #define HC_05_H_
 #include "HC_05_Configuration.h"
 
-void Command_Init(void);
-//void Slave_Init(void);
-//void Master_Trans(uint8_t data);
-//uint8_t Slave_Recv(void);
+void HC_05_Init(void);
+uint8_t HC_05_Recieve(void);
+void HC_05_Transmit_Char(uint8_t data);
+void HC_05_Transmit_String(uint8_t *str);
+
 
 #endif /* HC_05_H_ */
+
+
+

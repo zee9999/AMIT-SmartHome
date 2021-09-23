@@ -35,7 +35,7 @@ Discarded input sections
                 0x00000000       0x28 ADC.o
  .debug_ranges  0x00000000       0x18 ADC.o
  .debug_line    0x00000000       0xea ADC.o
- .debug_str     0x00000000      0x1b0 ADC.o
+ .debug_str     0x00000000      0x1b5 ADC.o
  .comment       0x00000000       0x31 ADC.o
  .debug_frame   0x00000000       0x34 ADC.o
  .text          0x00000000        0x0 KEYPAD.o
@@ -54,7 +54,7 @@ Discarded input sections
                 0x00000000       0x28 KEYPAD.o
  .debug_ranges  0x00000000       0x18 KEYPAD.o
  .debug_line    0x00000000      0x217 KEYPAD.o
- .debug_str     0x00000000      0x2f9 KEYPAD.o
+ .debug_str     0x00000000      0x2fe KEYPAD.o
  .comment       0x00000000       0x31 KEYPAD.o
  .debug_frame   0x00000000       0x44 KEYPAD.o
  .text          0x00000000        0x0 LCD.o
@@ -91,7 +91,7 @@ Discarded input sections
                 0x00000000       0x68 Motor.o
  .debug_ranges  0x00000000       0x58 Motor.o
  .debug_line    0x00000000      0x156 Motor.o
- .debug_str     0x00000000      0x2d5 Motor.o
+ .debug_str     0x00000000      0x2da Motor.o
  .comment       0x00000000       0x31 Motor.o
  .debug_frame   0x00000000       0xb4 Motor.o
  .text          0x00000000        0x0 S7SEG.o
@@ -120,7 +120,7 @@ Discarded input sections
                 0x00000000       0x58 S7SEG.o
  .debug_ranges  0x00000000       0x48 S7SEG.o
  .debug_line    0x00000000      0x258 S7SEG.o
- .debug_str     0x00000000      0x330 S7SEG.o
+ .debug_str     0x00000000      0x335 S7SEG.o
  .comment       0x00000000       0x31 S7SEG.o
  .debug_frame   0x00000000       0xa0 S7SEG.o
  .text          0x00000000        0x0 DIO.o
@@ -158,7 +158,7 @@ Discarded input sections
                 0x00000000       0x28 Servo.o
  .debug_ranges  0x00000000       0x18 Servo.o
  .debug_line    0x00000000       0xd0 Servo.o
- .debug_str     0x00000000      0x1c2 Servo.o
+ .debug_str     0x00000000      0x1c7 Servo.o
  .comment       0x00000000       0x31 Servo.o
  .debug_frame   0x00000000       0x34 Servo.o
  .text          0x00000000        0x0 SPI.o
@@ -222,7 +222,7 @@ Discarded input sections
                 0x00000000       0xb0 Timer0.o
  .debug_ranges  0x00000000       0xa0 Timer0.o
  .debug_line    0x00000000      0x33a Timer0.o
- .debug_str     0x00000000      0x53a Timer0.o
+ .debug_str     0x00000000      0x53f Timer0.o
  .comment       0x00000000       0x31 Timer0.o
  .debug_frame   0x00000000      0x17c Timer0.o
  .text          0x00000000        0x0 UART.o
@@ -241,7 +241,7 @@ Discarded input sections
                 0x00000000       0x30 UART.o
  .debug_ranges  0x00000000       0x20 UART.o
  .debug_line    0x00000000       0xf9 UART.o
- .debug_str     0x00000000      0x1cc UART.o
+ .debug_str     0x00000000      0x1d1 UART.o
  .comment       0x00000000       0x31 UART.o
  .debug_frame   0x00000000       0x44 UART.o
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
@@ -509,7 +509,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x54e
+.text           0x00000000      0x57a
  *(.vectors)
  .vectors       0x00000000       0x54 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
                 0x00000000                __vector_default
@@ -612,43 +612,43 @@ END GROUP
  .text.DIO_SetPin_State
                 0x00000336       0xe2 DIO.o
                 0x00000336                DIO_SetPin_State
- .text.main     0x00000418       0xa0 main.o
+ .text.main     0x00000418       0xcc main.o
                 0x00000418                main
  .text.LED0_Initialize
-                0x000004b8        0xc OUTPUT_Module.o
-                0x000004b8                LED0_Initialize
- .text.LED0_ON  0x000004c4        0xc OUTPUT_Module.o
-                0x000004c4                LED0_ON
+                0x000004e4        0xc OUTPUT_Module.o
+                0x000004e4                LED0_Initialize
+ .text.LED0_ON  0x000004f0        0xc OUTPUT_Module.o
+                0x000004f0                LED0_ON
  .text.LED0_OFF
-                0x000004d0        0xc OUTPUT_Module.o
-                0x000004d0                LED0_OFF
+                0x000004fc        0xc OUTPUT_Module.o
+                0x000004fc                LED0_OFF
  .text.LED1_Initialize
-                0x000004dc        0xc OUTPUT_Module.o
-                0x000004dc                LED1_Initialize
- .text.LED1_ON  0x000004e8        0xc OUTPUT_Module.o
-                0x000004e8                LED1_ON
+                0x00000508        0xc OUTPUT_Module.o
+                0x00000508                LED1_Initialize
+ .text.LED1_ON  0x00000514        0xc OUTPUT_Module.o
+                0x00000514                LED1_ON
  .text.LED1_OFF
-                0x000004f4        0xc OUTPUT_Module.o
-                0x000004f4                LED1_OFF
+                0x00000520        0xc OUTPUT_Module.o
+                0x00000520                LED1_OFF
  .text.LED2_Initialize
-                0x00000500        0xc OUTPUT_Module.o
-                0x00000500                LED2_Initialize
- .text.LED2_ON  0x0000050c        0xc OUTPUT_Module.o
-                0x0000050c                LED2_ON
+                0x0000052c        0xc OUTPUT_Module.o
+                0x0000052c                LED2_Initialize
+ .text.LED2_ON  0x00000538        0xc OUTPUT_Module.o
+                0x00000538                LED2_ON
  .text.LED2_OFF
-                0x00000518        0xc OUTPUT_Module.o
-                0x00000518                LED2_OFF
+                0x00000544        0xc OUTPUT_Module.o
+                0x00000544                LED2_OFF
  .text.Slave_Init
-                0x00000524       0x1e SPI.o
-                0x00000524                Slave_Init
+                0x00000550       0x1e SPI.o
+                0x00000550                Slave_Init
  .text.Slave_Recv
-                0x00000542        0x8 SPI.o
-                0x00000542                Slave_Recv
-                0x0000054a                . = ALIGN (0x2)
+                0x0000056e        0x8 SPI.o
+                0x0000056e                Slave_Recv
+                0x00000576                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000054a        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x0000054a                _exit
-                0x0000054a                exit
+ .fini9         0x00000576        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00000576                _exit
+                0x00000576                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -667,11 +667,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000054a        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000576        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x0000054e                _etext = .
+                0x0000057a                _etext = .
 
-.data           0x00800060       0x36 load address 0x0000054e
+.data           0x00800060       0x42 load address 0x0000057a
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -679,26 +679,26 @@ END GROUP
  *(.rodata)
  *(.rodata*)
  .rodata.str1.1
-                0x00800060       0x36 main.o
+                0x00800060       0x42 main.o
  *(.gnu.linkonce.r*)
-                0x00800096                . = ALIGN (0x2)
-                0x00800096                _edata = .
-                0x00800096                PROVIDE (__data_end, .)
+                0x008000a2                . = ALIGN (0x2)
+                0x008000a2                _edata = .
+                0x008000a2                PROVIDE (__data_end, .)
 
-.bss            0x00800096        0x0
-                0x00800096                PROVIDE (__bss_start, .)
+.bss            0x008000a2        0x0
+                0x008000a2                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
  *(COMMON)
-                0x00800096                PROVIDE (__bss_end, .)
-                0x0000054e                __data_load_start = LOADADDR (.data)
-                0x00000584                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x008000a2                PROVIDE (__bss_end, .)
+                0x0000057a                __data_load_start = LOADADDR (.data)
+                0x000005bc                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800096        0x0
+.noinit         0x008000a2        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x00800096                _end = .
+                0x008000a2                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -783,14 +783,14 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x15a6
+.debug_info     0x00000000     0x1601
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x4e6 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_info    0x000004e6      0x6d7 LCD.o
  .debug_info    0x00000bbd      0x2e9 DIO.o
- .debug_info    0x00000ea6      0x2a0 main.o
- .debug_info    0x00001146      0x37e OUTPUT_Module.o
- .debug_info    0x000014c4       0xe2 SPI.o
+ .debug_info    0x00000ea6      0x2fb main.o
+ .debug_info    0x000011a1      0x37e OUTPUT_Module.o
+ .debug_info    0x0000151f       0xe2 SPI.o
 
 .debug_abbrev   0x00000000      0x8fc
  *(.debug_abbrev)
@@ -801,14 +801,14 @@ END GROUP
  .debug_abbrev  0x000007e1       0x87 OUTPUT_Module.o
  .debug_abbrev  0x00000868       0x94 SPI.o
 
-.debug_line     0x00000000      0xac5
+.debug_line     0x00000000      0xb01
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x116 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_line    0x00000116      0x2bd LCD.o
  .debug_line    0x000003d3      0x2e0 DIO.o
- .debug_line    0x000006b3      0x180 main.o
- .debug_line    0x00000833      0x15a OUTPUT_Module.o
- .debug_line    0x0000098d      0x138 SPI.o
+ .debug_line    0x000006b3      0x1bc main.o
+ .debug_line    0x0000086f      0x15a OUTPUT_Module.o
+ .debug_line    0x000009c9      0x138 SPI.o
 
 .debug_frame    0x00000000      0x240
  *(.debug_frame)
@@ -818,19 +818,19 @@ END GROUP
  .debug_frame   0x00000118       0xd4 OUTPUT_Module.o
  .debug_frame   0x000001ec       0x54 SPI.o
 
-.debug_str      0x00000000      0x5b2
+.debug_str      0x00000000      0x5b7
  *(.debug_str)
  .debug_str     0x00000000      0x196 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
- .debug_str     0x00000196      0x2b3 LCD.o
-                                0x2e7 (size before relaxing)
- .debug_str     0x00000449       0x7d DIO.o
-                                0x308 (size before relaxing)
- .debug_str     0x000004c6       0x8f main.o
-                                0x234 (size before relaxing)
- .debug_str     0x00000555       0x39 OUTPUT_Module.o
-                                0x2e5 (size before relaxing)
- .debug_str     0x0000058e       0x24 SPI.o
-                                0x1c8 (size before relaxing)
+ .debug_str     0x00000196      0x2b8 LCD.o
+                                0x2ec (size before relaxing)
+ .debug_str     0x0000044e       0x7d DIO.o
+                                0x30d (size before relaxing)
+ .debug_str     0x000004cb       0x8f main.o
+                                0x239 (size before relaxing)
+ .debug_str     0x0000055a       0x39 OUTPUT_Module.o
+                                0x2ea (size before relaxing)
+ .debug_str     0x00000593       0x24 SPI.o
+                                0x1cd (size before relaxing)
 
 .debug_loc      0x00000000      0x6e9
  *(.debug_loc)

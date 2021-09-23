@@ -7,7 +7,7 @@
  */ 
 
 
-#include "UART.h"
+#include "HC_05.h"
 #include "SPI.h"
 #include "LCD.h"
 
@@ -17,15 +17,15 @@ int main(void)
 {
 	LCD_Init();
 	LCD_CLEAR();
-	UART_Init();
+	HC_05_Init();
 	uint8_t* data;
 	Master_Init();
 
 
 	while(1)
 	{
-		data = UART_Receive();
-		if (data == '1')
+		data = HC_05_Recieve();
+		/*if (data == '1')
 		{
 			Master_Trans(1);
 			LCD_CLEAR();
@@ -54,6 +54,38 @@ int main(void)
 			Master_Trans(0);
 			LCD_CLEAR();
 			LCD_WRITE_STR("DATA TRANSMITTED");
+		}*/
+		switch ((uint8_t) data)
+		{
+			case 49:
+				Master_Trans(1);
+				LCD_CLEAR();
+				LCD_WRITE_STR("DATA TRANSMITTED");
+				break;
+			case 50:
+				Master_Trans(2);
+				LCD_CLEAR();
+				LCD_WRITE_STR("DATA TRANSMITTED");
+				break;
+			case 51:
+				Master_Trans(3);
+				LCD_CLEAR();
+				LCD_WRITE_STR("DATA TRANSMITTED");
+				break;
+			case 52:
+				Master_Trans(4);
+				LCD_CLEAR();
+				LCD_WRITE_STR("DATA TRANSMITTED");
+				break;
+			case 48:
+				Master_Trans(0);
+				LCD_CLEAR();
+				LCD_WRITE_STR("DATA TRANSMITTED");
+				break;
+			default:
+				LCD_CLEAR();
+				LCD_WRITE_STR("DATA TRANSMITTED");
+				break;
 		}
 	}
 	

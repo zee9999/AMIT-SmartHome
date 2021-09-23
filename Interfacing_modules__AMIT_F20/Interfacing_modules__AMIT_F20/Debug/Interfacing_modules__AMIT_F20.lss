@@ -3,29 +3,29 @@ Interfacing_modules__AMIT_F20.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         0000054e  00000000  00000000  00000074  2**1
+  0 .text         0000057a  00000000  00000000  00000074  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000036  00800060  0000054e  000005c2  2**0
+  1 .data         00000042  00800060  0000057a  000005ee  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .comment      00000030  00000000  00000000  000005f8  2**0
+  2 .comment      00000030  00000000  00000000  00000630  2**0
                   CONTENTS, READONLY
-  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000628  2**2
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000660  2**2
                   CONTENTS, READONLY
-  4 .debug_aranges 00000158  00000000  00000000  00000664  2**0
+  4 .debug_aranges 00000158  00000000  00000000  0000069c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   000015a6  00000000  00000000  000007bc  2**0
+  5 .debug_info   00001601  00000000  00000000  000007f4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 000008fc  00000000  00000000  00001d62  2**0
+  6 .debug_abbrev 000008fc  00000000  00000000  00001df5  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   00000ac5  00000000  00000000  0000265e  2**0
+  7 .debug_line   00000b01  00000000  00000000  000026f1  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  00000240  00000000  00000000  00003124  2**2
+  8 .debug_frame  00000240  00000000  00000000  000031f4  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    000005b2  00000000  00000000  00003364  2**0
+  9 .debug_str    000005b7  00000000  00000000  00003434  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    000006e9  00000000  00000000  00003916  2**0
+ 10 .debug_loc    000006e9  00000000  00000000  000039eb  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000108  00000000  00000000  00003fff  2**0
+ 11 .debug_ranges 00000108  00000000  00000000  000040d4  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -65,18 +65,18 @@ Disassembly of section .text:
   60:	10 e0       	ldi	r17, 0x00	; 0
   62:	a0 e6       	ldi	r26, 0x60	; 96
   64:	b0 e0       	ldi	r27, 0x00	; 0
-  66:	ee e4       	ldi	r30, 0x4E	; 78
+  66:	ea e7       	ldi	r30, 0x7A	; 122
   68:	f5 e0       	ldi	r31, 0x05	; 5
   6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
   6c:	05 90       	lpm	r0, Z+
   6e:	0d 92       	st	X+, r0
-  70:	a6 39       	cpi	r26, 0x96	; 150
+  70:	a2 3a       	cpi	r26, 0xA2	; 162
   72:	b1 07       	cpc	r27, r17
   74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
 
 00000076 <__do_clear_bss>:
   76:	20 e0       	ldi	r18, 0x00	; 0
-  78:	a6 e9       	ldi	r26, 0x96	; 150
+  78:	a2 ea       	ldi	r26, 0xA2	; 162
   7a:	b0 e0       	ldi	r27, 0x00	; 0
   7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
 
@@ -84,11 +84,11 @@ Disassembly of section .text:
   7e:	1d 92       	st	X+, r1
 
 00000080 <.do_clear_bss_start>:
-  80:	a6 39       	cpi	r26, 0x96	; 150
+  80:	a2 3a       	cpi	r26, 0xA2	; 162
   82:	b2 07       	cpc	r27, r18
   84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
   86:	0e 94 0c 02 	call	0x418	; 0x418 <main>
-  8a:	0c 94 a5 02 	jmp	0x54a	; 0x54a <_exit>
+  8a:	0c 94 bb 02 	jmp	0x576	; 0x576 <_exit>
 
 0000008e <__bad_interrupt>:
   8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
@@ -627,227 +627,254 @@ int main(void)
 	LCD_CLEAR();
  41c:	0e 94 26 01 	call	0x24c	; 0x24c <LCD_CLEAR>
 	Slave_Init();
- 420:	0e 94 92 02 	call	0x524	; 0x524 <Slave_Init>
+ 420:	0e 94 a8 02 	call	0x550	; 0x550 <Slave_Init>
 	LED0_Initialize();
- 424:	0e 94 5c 02 	call	0x4b8	; 0x4b8 <LED0_Initialize>
+ 424:	0e 94 72 02 	call	0x4e4	; 0x4e4 <LED0_Initialize>
 	LED1_Initialize();
- 428:	0e 94 6e 02 	call	0x4dc	; 0x4dc <LED1_Initialize>
+ 428:	0e 94 84 02 	call	0x508	; 0x508 <LED1_Initialize>
 	LED2_Initialize();
- 42c:	0e 94 80 02 	call	0x500	; 0x500 <LED2_Initialize>
+ 42c:	0e 94 96 02 	call	0x52c	; 0x52c <LED2_Initialize>
 	uint8_t data;
 	
 	
 	while(1)
 	{
 		data = Slave_Recv();
- 430:	0e 94 a1 02 	call	0x542	; 0x542 <Slave_Recv>
+ 430:	0e 94 b7 02 	call	0x56e	; 0x56e <Slave_Recv>
  434:	c8 2f       	mov	r28, r24
 		LCD_CLEAR();
  436:	0e 94 26 01 	call	0x24c	; 0x24c <LCD_CLEAR>
-		if (data == 1)
- 43a:	c1 30       	cpi	r28, 0x01	; 1
- 43c:	49 f4       	brne	.+18     	; 0x450 <main+0x38>
-		{
-			LED0_ON();
- 43e:	0e 94 62 02 	call	0x4c4	; 0x4c4 <LED0_ON>
-			LCD_CLEAR();
- 442:	0e 94 26 01 	call	0x24c	; 0x24c <LCD_CLEAR>
-			LCD_WRITE_STR("LED0: ON");
- 446:	80 e6       	ldi	r24, 0x60	; 96
- 448:	90 e0       	ldi	r25, 0x00	; 0
- 44a:	0e 94 19 01 	call	0x232	; 0x232 <LCD_WRITE_STR>
- 44e:	f0 cf       	rjmp	.-32     	; 0x430 <main+0x18>
-		}
-		else if (data == 2)
- 450:	c2 30       	cpi	r28, 0x02	; 2
- 452:	49 f4       	brne	.+18     	; 0x466 <main+0x4e>
-		{
-			LED1_ON();
- 454:	0e 94 74 02 	call	0x4e8	; 0x4e8 <LED1_ON>
-			LCD_CLEAR();
- 458:	0e 94 26 01 	call	0x24c	; 0x24c <LCD_CLEAR>
-			LCD_WRITE_STR("LED1: ON");
- 45c:	89 e6       	ldi	r24, 0x69	; 105
- 45e:	90 e0       	ldi	r25, 0x00	; 0
- 460:	0e 94 19 01 	call	0x232	; 0x232 <LCD_WRITE_STR>
- 464:	e5 cf       	rjmp	.-54     	; 0x430 <main+0x18>
-		}
-		else if (data == 3)
- 466:	c3 30       	cpi	r28, 0x03	; 3
- 468:	49 f4       	brne	.+18     	; 0x47c <main+0x64>
-		{
-			LED2_ON();
- 46a:	0e 94 86 02 	call	0x50c	; 0x50c <LED2_ON>
-			LCD_CLEAR();
- 46e:	0e 94 26 01 	call	0x24c	; 0x24c <LCD_CLEAR>
-			LCD_WRITE_STR("LED2: ON");
- 472:	82 e7       	ldi	r24, 0x72	; 114
- 474:	90 e0       	ldi	r25, 0x00	; 0
- 476:	0e 94 19 01 	call	0x232	; 0x232 <LCD_WRITE_STR>
- 47a:	da cf       	rjmp	.-76     	; 0x430 <main+0x18>
-		}
-		else if (data == 4)
- 47c:	c4 30       	cpi	r28, 0x04	; 4
- 47e:	69 f4       	brne	.+26     	; 0x49a <main+0x82>
-		{
-			LED0_ON();
- 480:	0e 94 62 02 	call	0x4c4	; 0x4c4 <LED0_ON>
-			LED1_ON();
- 484:	0e 94 74 02 	call	0x4e8	; 0x4e8 <LED1_ON>
-			LED2_ON();
- 488:	0e 94 86 02 	call	0x50c	; 0x50c <LED2_ON>
-			LCD_CLEAR();
- 48c:	0e 94 26 01 	call	0x24c	; 0x24c <LCD_CLEAR>
-			LCD_WRITE_STR("ALL LEDs: ON");
- 490:	8b e7       	ldi	r24, 0x7B	; 123
- 492:	90 e0       	ldi	r25, 0x00	; 0
- 494:	0e 94 19 01 	call	0x232	; 0x232 <LCD_WRITE_STR>
- 498:	cb cf       	rjmp	.-106    	; 0x430 <main+0x18>
-		}
-		else if (data == 0)
- 49a:	c1 11       	cpse	r28, r1
- 49c:	c9 cf       	rjmp	.-110    	; 0x430 <main+0x18>
-		{
-			LED0_OFF();
- 49e:	0e 94 68 02 	call	0x4d0	; 0x4d0 <LED0_OFF>
 			LED1_OFF();
- 4a2:	0e 94 7a 02 	call	0x4f4	; 0x4f4 <LED1_OFF>
 			LED2_OFF();
- 4a6:	0e 94 8c 02 	call	0x518	; 0x518 <LED2_OFF>
 			LCD_CLEAR();
- 4aa:	0e 94 26 01 	call	0x24c	; 0x24c <LCD_CLEAR>
 			LCD_WRITE_STR("ALL LEDs: OFF");
- 4ae:	88 e8       	ldi	r24, 0x88	; 136
- 4b0:	90 e0       	ldi	r25, 0x00	; 0
- 4b2:	0e 94 19 01 	call	0x232	; 0x232 <LCD_WRITE_STR>
- 4b6:	bc cf       	rjmp	.-136    	; 0x430 <main+0x18>
+		}*/
+		switch (data)
+ 43a:	c2 30       	cpi	r28, 0x02	; 2
+ 43c:	c1 f0       	breq	.+48     	; 0x46e <main+0x56>
+ 43e:	28 f4       	brcc	.+10     	; 0x44a <main+0x32>
+ 440:	cc 23       	and	r28, r28
+ 442:	e1 f1       	breq	.+120    	; 0x4bc <main+0xa4>
+ 444:	c1 30       	cpi	r28, 0x01	; 1
+ 446:	31 f0       	breq	.+12     	; 0x454 <main+0x3c>
+ 448:	46 c0       	rjmp	.+140    	; 0x4d6 <main+0xbe>
+ 44a:	c3 30       	cpi	r28, 0x03	; 3
+ 44c:	e9 f0       	breq	.+58     	; 0x488 <main+0x70>
+ 44e:	c4 30       	cpi	r28, 0x04	; 4
+ 450:	41 f1       	breq	.+80     	; 0x4a2 <main+0x8a>
+ 452:	41 c0       	rjmp	.+130    	; 0x4d6 <main+0xbe>
+		{
+		case 1:
+			LED0_ON();
+ 454:	0e 94 78 02 	call	0x4f0	; 0x4f0 <LED0_ON>
+			LED1_OFF();
+ 458:	0e 94 90 02 	call	0x520	; 0x520 <LED1_OFF>
+			LED2_OFF();
+ 45c:	0e 94 a2 02 	call	0x544	; 0x544 <LED2_OFF>
+			LCD_CLEAR();
+ 460:	0e 94 26 01 	call	0x24c	; 0x24c <LCD_CLEAR>
+			LCD_WRITE_STR("LED0: ON");
+ 464:	80 e6       	ldi	r24, 0x60	; 96
+ 466:	90 e0       	ldi	r25, 0x00	; 0
+ 468:	0e 94 19 01 	call	0x232	; 0x232 <LCD_WRITE_STR>
+			break;
+ 46c:	e1 cf       	rjmp	.-62     	; 0x430 <main+0x18>
+		case 2:
+			LED0_OFF();
+ 46e:	0e 94 7e 02 	call	0x4fc	; 0x4fc <LED0_OFF>
+			LED1_ON();
+ 472:	0e 94 8a 02 	call	0x514	; 0x514 <LED1_ON>
+			LED2_OFF();
+ 476:	0e 94 a2 02 	call	0x544	; 0x544 <LED2_OFF>
+			LCD_CLEAR();
+ 47a:	0e 94 26 01 	call	0x24c	; 0x24c <LCD_CLEAR>
+			LCD_WRITE_STR("LED1: ON");
+ 47e:	89 e6       	ldi	r24, 0x69	; 105
+ 480:	90 e0       	ldi	r25, 0x00	; 0
+ 482:	0e 94 19 01 	call	0x232	; 0x232 <LCD_WRITE_STR>
+			break;
+ 486:	d4 cf       	rjmp	.-88     	; 0x430 <main+0x18>
+		case 3:
+			LED0_OFF();
+ 488:	0e 94 7e 02 	call	0x4fc	; 0x4fc <LED0_OFF>
+			LED1_OFF();
+ 48c:	0e 94 90 02 	call	0x520	; 0x520 <LED1_OFF>
+			LED2_ON();
+ 490:	0e 94 9c 02 	call	0x538	; 0x538 <LED2_ON>
+			LCD_CLEAR();
+ 494:	0e 94 26 01 	call	0x24c	; 0x24c <LCD_CLEAR>
+			LCD_WRITE_STR("LED2: ON");
+ 498:	82 e7       	ldi	r24, 0x72	; 114
+ 49a:	90 e0       	ldi	r25, 0x00	; 0
+ 49c:	0e 94 19 01 	call	0x232	; 0x232 <LCD_WRITE_STR>
+			break;
+ 4a0:	c7 cf       	rjmp	.-114    	; 0x430 <main+0x18>
+		case 4:
+			LED0_ON();
+ 4a2:	0e 94 78 02 	call	0x4f0	; 0x4f0 <LED0_ON>
+			LED1_ON();
+ 4a6:	0e 94 8a 02 	call	0x514	; 0x514 <LED1_ON>
+			LED2_ON();
+ 4aa:	0e 94 9c 02 	call	0x538	; 0x538 <LED2_ON>
+			LCD_CLEAR();
+ 4ae:	0e 94 26 01 	call	0x24c	; 0x24c <LCD_CLEAR>
+			LCD_WRITE_STR("ALL LEDs: ON");
+ 4b2:	8b e7       	ldi	r24, 0x7B	; 123
+ 4b4:	90 e0       	ldi	r25, 0x00	; 0
+ 4b6:	0e 94 19 01 	call	0x232	; 0x232 <LCD_WRITE_STR>
+			break;
+ 4ba:	ba cf       	rjmp	.-140    	; 0x430 <main+0x18>
+		case 0:
+			LED0_OFF();
+ 4bc:	0e 94 7e 02 	call	0x4fc	; 0x4fc <LED0_OFF>
+			LED1_OFF();
+ 4c0:	0e 94 90 02 	call	0x520	; 0x520 <LED1_OFF>
+			LED2_OFF();
+ 4c4:	0e 94 a2 02 	call	0x544	; 0x544 <LED2_OFF>
+			LCD_CLEAR();
+ 4c8:	0e 94 26 01 	call	0x24c	; 0x24c <LCD_CLEAR>
+			LCD_WRITE_STR("ALL LEDs: OFF");
+ 4cc:	88 e8       	ldi	r24, 0x88	; 136
+ 4ce:	90 e0       	ldi	r25, 0x00	; 0
+ 4d0:	0e 94 19 01 	call	0x232	; 0x232 <LCD_WRITE_STR>
+			break;
+ 4d4:	ad cf       	rjmp	.-166    	; 0x430 <main+0x18>
+		default:
+			LCD_CLEAR();
+ 4d6:	0e 94 26 01 	call	0x24c	; 0x24c <LCD_CLEAR>
+			LCD_WRITE_STR("WRONG INPUT");
+ 4da:	86 e9       	ldi	r24, 0x96	; 150
+ 4dc:	90 e0       	ldi	r25, 0x00	; 0
+ 4de:	0e 94 19 01 	call	0x232	; 0x232 <LCD_WRITE_STR>
+			break;
+ 4e2:	a6 cf       	rjmp	.-180    	; 0x430 <main+0x18>
 
-000004b8 <LED0_Initialize>:
+000004e4 <LED0_Initialize>:
 {
 	DIO_SetPin_State(LED1_PRT, LED1, LED_LOW);
 }
 void LED1_Toggle(void)
 {
 	DIO_TglPin_State(LED1_PRT, LED1);
- 4b8:	41 e0       	ldi	r20, 0x01	; 1
- 4ba:	62 e0       	ldi	r22, 0x02	; 2
- 4bc:	82 e0       	ldi	r24, 0x02	; 2
- 4be:	0e 94 2a 01 	call	0x254	; 0x254 <DIO_SetPin_Direction>
- 4c2:	08 95       	ret
+ 4e4:	41 e0       	ldi	r20, 0x01	; 1
+ 4e6:	62 e0       	ldi	r22, 0x02	; 2
+ 4e8:	82 e0       	ldi	r24, 0x02	; 2
+ 4ea:	0e 94 2a 01 	call	0x254	; 0x254 <DIO_SetPin_Direction>
+ 4ee:	08 95       	ret
 
-000004c4 <LED0_ON>:
- 4c4:	41 e0       	ldi	r20, 0x01	; 1
- 4c6:	62 e0       	ldi	r22, 0x02	; 2
- 4c8:	82 e0       	ldi	r24, 0x02	; 2
- 4ca:	0e 94 9b 01 	call	0x336	; 0x336 <DIO_SetPin_State>
- 4ce:	08 95       	ret
+000004f0 <LED0_ON>:
+ 4f0:	41 e0       	ldi	r20, 0x01	; 1
+ 4f2:	62 e0       	ldi	r22, 0x02	; 2
+ 4f4:	82 e0       	ldi	r24, 0x02	; 2
+ 4f6:	0e 94 9b 01 	call	0x336	; 0x336 <DIO_SetPin_State>
+ 4fa:	08 95       	ret
 
-000004d0 <LED0_OFF>:
- 4d0:	40 e0       	ldi	r20, 0x00	; 0
- 4d2:	62 e0       	ldi	r22, 0x02	; 2
- 4d4:	82 e0       	ldi	r24, 0x02	; 2
- 4d6:	0e 94 9b 01 	call	0x336	; 0x336 <DIO_SetPin_State>
- 4da:	08 95       	ret
+000004fc <LED0_OFF>:
+ 4fc:	40 e0       	ldi	r20, 0x00	; 0
+ 4fe:	62 e0       	ldi	r22, 0x02	; 2
+ 500:	82 e0       	ldi	r24, 0x02	; 2
+ 502:	0e 94 9b 01 	call	0x336	; 0x336 <DIO_SetPin_State>
+ 506:	08 95       	ret
 
-000004dc <LED1_Initialize>:
- 4dc:	41 e0       	ldi	r20, 0x01	; 1
- 4de:	67 e0       	ldi	r22, 0x07	; 7
- 4e0:	82 e0       	ldi	r24, 0x02	; 2
- 4e2:	0e 94 2a 01 	call	0x254	; 0x254 <DIO_SetPin_Direction>
- 4e6:	08 95       	ret
+00000508 <LED1_Initialize>:
+ 508:	41 e0       	ldi	r20, 0x01	; 1
+ 50a:	67 e0       	ldi	r22, 0x07	; 7
+ 50c:	82 e0       	ldi	r24, 0x02	; 2
+ 50e:	0e 94 2a 01 	call	0x254	; 0x254 <DIO_SetPin_Direction>
+ 512:	08 95       	ret
 
-000004e8 <LED1_ON>:
- 4e8:	41 e0       	ldi	r20, 0x01	; 1
- 4ea:	67 e0       	ldi	r22, 0x07	; 7
- 4ec:	82 e0       	ldi	r24, 0x02	; 2
- 4ee:	0e 94 9b 01 	call	0x336	; 0x336 <DIO_SetPin_State>
- 4f2:	08 95       	ret
+00000514 <LED1_ON>:
+ 514:	41 e0       	ldi	r20, 0x01	; 1
+ 516:	67 e0       	ldi	r22, 0x07	; 7
+ 518:	82 e0       	ldi	r24, 0x02	; 2
+ 51a:	0e 94 9b 01 	call	0x336	; 0x336 <DIO_SetPin_State>
+ 51e:	08 95       	ret
 
-000004f4 <LED1_OFF>:
- 4f4:	40 e0       	ldi	r20, 0x00	; 0
- 4f6:	67 e0       	ldi	r22, 0x07	; 7
- 4f8:	82 e0       	ldi	r24, 0x02	; 2
- 4fa:	0e 94 9b 01 	call	0x336	; 0x336 <DIO_SetPin_State>
- 4fe:	08 95       	ret
+00000520 <LED1_OFF>:
+ 520:	40 e0       	ldi	r20, 0x00	; 0
+ 522:	67 e0       	ldi	r22, 0x07	; 7
+ 524:	82 e0       	ldi	r24, 0x02	; 2
+ 526:	0e 94 9b 01 	call	0x336	; 0x336 <DIO_SetPin_State>
+ 52a:	08 95       	ret
 
-00000500 <LED2_Initialize>:
+0000052c <LED2_Initialize>:
 }
 
 
 void LED2_Initialize(void)
 {
 	DIO_SetPin_Direction(LED2_DDR, LED2, LED_OUTPUT);
- 500:	41 e0       	ldi	r20, 0x01	; 1
- 502:	63 e0       	ldi	r22, 0x03	; 3
- 504:	83 e0       	ldi	r24, 0x03	; 3
- 506:	0e 94 2a 01 	call	0x254	; 0x254 <DIO_SetPin_Direction>
- 50a:	08 95       	ret
+ 52c:	41 e0       	ldi	r20, 0x01	; 1
+ 52e:	63 e0       	ldi	r22, 0x03	; 3
+ 530:	83 e0       	ldi	r24, 0x03	; 3
+ 532:	0e 94 2a 01 	call	0x254	; 0x254 <DIO_SetPin_Direction>
+ 536:	08 95       	ret
 
-0000050c <LED2_ON>:
+00000538 <LED2_ON>:
 }
 void LED2_ON(void)
 {
 	DIO_SetPin_State(LED2_PRT, LED2, LED_HIGH);
- 50c:	41 e0       	ldi	r20, 0x01	; 1
- 50e:	63 e0       	ldi	r22, 0x03	; 3
- 510:	83 e0       	ldi	r24, 0x03	; 3
- 512:	0e 94 9b 01 	call	0x336	; 0x336 <DIO_SetPin_State>
- 516:	08 95       	ret
+ 538:	41 e0       	ldi	r20, 0x01	; 1
+ 53a:	63 e0       	ldi	r22, 0x03	; 3
+ 53c:	83 e0       	ldi	r24, 0x03	; 3
+ 53e:	0e 94 9b 01 	call	0x336	; 0x336 <DIO_SetPin_State>
+ 542:	08 95       	ret
 
-00000518 <LED2_OFF>:
+00000544 <LED2_OFF>:
 }
 void LED2_OFF(void)
 {
 	DIO_SetPin_State(LED2_PRT, LED2, LED_LOW);
- 518:	40 e0       	ldi	r20, 0x00	; 0
- 51a:	63 e0       	ldi	r22, 0x03	; 3
- 51c:	83 e0       	ldi	r24, 0x03	; 3
- 51e:	0e 94 9b 01 	call	0x336	; 0x336 <DIO_SetPin_State>
- 522:	08 95       	ret
+ 544:	40 e0       	ldi	r20, 0x00	; 0
+ 546:	63 e0       	ldi	r22, 0x03	; 3
+ 548:	83 e0       	ldi	r24, 0x03	; 3
+ 54a:	0e 94 9b 01 	call	0x336	; 0x336 <DIO_SetPin_State>
+ 54e:	08 95       	ret
 
-00000524 <Slave_Init>:
+00000550 <Slave_Init>:
 	SPDR = data;
 	while (GET_BIT(SPSR,SPIF) != 1);
 }
 void Slave_Init(void)
 {
 	CLR_BIT(DDRB,4);
- 524:	87 b3       	in	r24, 0x17	; 23
- 526:	8f 7e       	andi	r24, 0xEF	; 239
- 528:	87 bb       	out	0x17, r24	; 23
+ 550:	87 b3       	in	r24, 0x17	; 23
+ 552:	8f 7e       	andi	r24, 0xEF	; 239
+ 554:	87 bb       	out	0x17, r24	; 23
 	CLR_BIT(DDRB,5);
- 52a:	87 b3       	in	r24, 0x17	; 23
- 52c:	8f 7d       	andi	r24, 0xDF	; 223
- 52e:	87 bb       	out	0x17, r24	; 23
+ 556:	87 b3       	in	r24, 0x17	; 23
+ 558:	8f 7d       	andi	r24, 0xDF	; 223
+ 55a:	87 bb       	out	0x17, r24	; 23
 	SET_BIT(DDRB,6);
- 530:	87 b3       	in	r24, 0x17	; 23
- 532:	80 64       	ori	r24, 0x40	; 64
- 534:	87 bb       	out	0x17, r24	; 23
+ 55c:	87 b3       	in	r24, 0x17	; 23
+ 55e:	80 64       	ori	r24, 0x40	; 64
+ 560:	87 bb       	out	0x17, r24	; 23
 	CLR_BIT(DDRB,7);
- 536:	87 b3       	in	r24, 0x17	; 23
- 538:	8f 77       	andi	r24, 0x7F	; 127
- 53a:	87 bb       	out	0x17, r24	; 23
+ 562:	87 b3       	in	r24, 0x17	; 23
+ 564:	8f 77       	andi	r24, 0x7F	; 127
+ 566:	87 bb       	out	0x17, r24	; 23
 	SPCR = 0x43;
- 53c:	83 e4       	ldi	r24, 0x43	; 67
- 53e:	8d b9       	out	0x0d, r24	; 13
- 540:	08 95       	ret
+ 568:	83 e4       	ldi	r24, 0x43	; 67
+ 56a:	8d b9       	out	0x0d, r24	; 13
+ 56c:	08 95       	ret
 
-00000542 <Slave_Recv>:
+0000056e <Slave_Recv>:
 	SET_BIT(SPCR,SPR0);
 	*/
 }
 char Slave_Recv(void)
 {
 	while (GET_BIT(SPSR,SPIF) != 1);
- 542:	77 9b       	sbis	0x0e, 7	; 14
- 544:	fe cf       	rjmp	.-4      	; 0x542 <Slave_Recv>
+ 56e:	77 9b       	sbis	0x0e, 7	; 14
+ 570:	fe cf       	rjmp	.-4      	; 0x56e <Slave_Recv>
 	return SPDR;
- 546:	8f b1       	in	r24, 0x0f	; 15
+ 572:	8f b1       	in	r24, 0x0f	; 15
 }
- 548:	08 95       	ret
+ 574:	08 95       	ret
 
-0000054a <_exit>:
- 54a:	f8 94       	cli
+00000576 <_exit>:
+ 576:	f8 94       	cli
 
-0000054c <__stop_program>:
- 54c:	ff cf       	rjmp	.-2      	; 0x54c <__stop_program>
+00000578 <__stop_program>:
+ 578:	ff cf       	rjmp	.-2      	; 0x578 <__stop_program>
